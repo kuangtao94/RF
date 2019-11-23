@@ -1,0 +1,25 @@
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Keywords ***
+打开浏览器
+    [Arguments]    ${url}    ${webdriver}
+    Open Browser    ${url}    ${webdriver}
+
+输入框
+    [Arguments]    ${search}
+    Input Text    id = kw    ${search}
+
+点击百度搜索按钮
+    Click Button    id = su
+
+等待时间
+    sleep    2
+
+验证标题
+    [Arguments]    ${result}
+    ${title}    get title
+    Should Contain    ${title}    ${result}
+
+关闭浏览器
+    Close Browser

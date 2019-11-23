@@ -1,0 +1,13 @@
+*** Settings ***
+Library           SeleniumLibrary
+Resource          UI分层一.txt
+
+*** Keywords ***
+验证百度搜索
+    [Arguments]    ${url}    ${driver}    ${input}    ${text}
+    打开浏览器    ${url}    ${driver}
+    输入框    ${input}
+    点击百度搜索按钮
+    等待时间
+    验证标题    ${text}
+    关闭浏览器

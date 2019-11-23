@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.5 on win32)" generated="20191124 00:09:07.661">
+<suite id="s1" name="RobotFramework Po设计" source="D:\Project\TestCase\robotframework\rf_test_pro\RobotFramework_Po设计.robot">
+<test id="s1-t1" name="测试用例原始代码">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://www.baidu.com</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20191124 00:09:10.442" level="INFO">Opening browser 'firefox' to base url 'https://www.baidu.com'.</msg>
+<status status="PASS" starttime="20191124 00:09:10.441" endtime="20191124 00:09:42.899"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id = kw</arg>
+<arg>selenium</arg>
+</arguments>
+<msg timestamp="20191124 00:09:42.899" level="INFO">Typing text 'selenium' into text field 'id = kw'.</msg>
+<status status="PASS" starttime="20191124 00:09:42.899" endtime="20191124 00:09:43.045"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id = su</arg>
+</arguments>
+<msg timestamp="20191124 00:09:43.045" level="INFO">Clicking button 'id = su'.</msg>
+<status status="PASS" starttime="20191124 00:09:43.045" endtime="20191124 00:09:43.305"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>css = #su</arg>
+</arguments>
+<status status="PASS" starttime="20191124 00:09:43.305" endtime="20191124 00:09:43.313"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20191124 00:09:45.315" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20191124 00:09:43.313" endtime="20191124 00:09:45.316"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20191124 00:09:45.350" level="INFO">${title} = 百度一下，你就知道</msg>
+<status status="PASS" starttime="20191124 00:09:45.317" endtime="20191124 00:09:45.350"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${title}</arg>
+<arg>selenium_百度搜索</arg>
+</arguments>
+<msg timestamp="20191124 00:09:45.351" level="FAIL">'百度一下，你就知道' does not contain 'selenium_百度搜索'</msg>
+<status status="FAIL" starttime="20191124 00:09:45.350" endtime="20191124 00:09:45.351"></status>
+</kw>
+<status status="FAIL" starttime="20191124 00:09:10.439" endtime="20191124 00:09:45.351" critical="yes">'百度一下，你就知道' does not contain 'selenium_百度搜索'</status>
+</test>
+<test id="s1-t2" name="分层一用例">
+<kw name="打开浏览器" library="UI分层一">
+<arguments>
+<arg>https://www.baidu.com</arg>
+<arg>firefox</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${webdriver}</arg>
+</arguments>
+<msg timestamp="20191124 00:09:45.355" level="INFO">Opening browser 'firefox' to base url 'https://www.baidu.com'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20191124 00:10:39.351" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20191124 00:10:39.124" endtime="20191124 00:10:39.351"></status>
+</kw>
+<msg timestamp="20191124 00:10:39.632" level="FAIL">WebDriverException: Message: Failed to decode response from marionette
+</msg>
+<status status="FAIL" starttime="20191124 00:09:45.354" endtime="20191124 00:10:39.633"></status>
+</kw>
+<status status="FAIL" starttime="20191124 00:09:45.354" endtime="20191124 00:10:39.634"></status>
+</kw>
+<status status="FAIL" starttime="20191124 00:09:45.352" endtime="20191124 00:10:39.635" critical="yes">WebDriverException: Message: Failed to decode response from marionette
+</status>
+</test>
+<test id="s1-t3" name="分层二用例">
+<kw name="验证百度搜索" library="UI分层二">
+<arguments>
+<arg>https://www.baidu.com</arg>
+<arg>firefox</arg>
+<arg>selenium</arg>
+<arg>selenium_百度搜索</arg>
+</arguments>
+<kw name="打开浏览器" library="UI分层一">
+<arguments>
+<arg>${url}</arg>
+<arg>${driver}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${webdriver}</arg>
+</arguments>
+<msg timestamp="20191124 00:10:39.711" level="INFO">Opening browser 'firefox' to base url 'https://www.baidu.com'.</msg>
+<status status="PASS" starttime="20191124 00:10:39.711" endtime="20191124 00:11:08.654"></status>
+</kw>
+<status status="PASS" starttime="20191124 00:10:39.644" endtime="20191124 00:11:08.655"></status>
+</kw>
+<kw name="输入框" library="UI分层一">
+<arguments>
+<arg>${input}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id = kw</arg>
+<arg>${search}</arg>
+</arguments>
+<msg timestamp="20191124 00:11:08.658" level="INFO">Typing text 'selenium' into text field 'id = kw'.</msg>
+<status status="PASS" starttime="20191124 00:11:08.657" endtime="20191124 00:11:08.852"></status>
+</kw>
+<status status="PASS" starttime="20191124 00:11:08.656" endtime="20191124 00:11:08.853"></status>
+</kw>
+<kw name="点击百度搜索按钮" library="UI分层一">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id = su</arg>
+</arguments>
+<msg timestamp="20191124 00:11:08.855" level="INFO">Clicking button 'id = su'.</msg>
+<status status="PASS" starttime="20191124 00:11:08.855" endtime="20191124 00:11:09.149"></status>
+</kw>
+<status status="PASS" starttime="20191124 00:11:08.853" endtime="20191124 00:11:09.150"></status>
+</kw>
+<kw name="等待时间" library="UI分层一">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20191124 00:11:11.152" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20191124 00:11:09.152" endtime="20191124 00:11:11.152"></status>
+</kw>
+<status status="PASS" starttime="20191124 00:11:09.150" endtime="20191124 00:11:11.152"></status>
+</kw>
+<kw name="验证标题" library="UI分层一">
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20191124 00:11:11.158" level="INFO">${title} = 百度安全验证</msg>
+<status status="PASS" starttime="20191124 00:11:11.153" endtime="20191124 00:11:11.158"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${title}</arg>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20191124 00:11:11.159" level="FAIL">'百度安全验证' does not contain 'selenium_百度搜索'</msg>
+<status status="FAIL" starttime="20191124 00:11:11.158" endtime="20191124 00:11:11.159"></status>
+</kw>
+<status status="FAIL" starttime="20191124 00:11:11.153" endtime="20191124 00:11:11.160"></status>
+</kw>
+<status status="FAIL" starttime="20191124 00:10:39.642" endtime="20191124 00:11:11.160"></status>
+</kw>
+<status status="FAIL" starttime="20191124 00:10:39.637" endtime="20191124 00:11:11.160" critical="yes">'百度安全验证' does not contain 'selenium_百度搜索'</status>
+</test>
+<status status="FAIL" starttime="20191124 00:09:07.729" endtime="20191124 00:11:11.192"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3">Critical Tests</stat>
+<stat pass="0" fail="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" id="s1" name="RobotFramework Po设计">RobotFramework Po设计</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

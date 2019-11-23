@@ -1,0 +1,6 @@
+*** Ssttings ***
+
+*** Test Case ***
+登录
+退出
+查询

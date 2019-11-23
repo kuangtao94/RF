@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.5 on win32)" generated="20190616 16:57:35.960">
+<suite id="s1" name="Rf Demo" source="D:\Test\TestCase\robotframework\rf_demo.robot">
+<test id="s1-t1" name="testcase">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>robot framework</arg>
+</arguments>
+<msg timestamp="20190616 16:57:36.388" level="INFO">robot framework</msg>
+<status status="PASS" starttime="20190616 16:57:36.388" endtime="20190616 16:57:36.388"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://www.baidu.com</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20190616 16:57:36.391" level="INFO">Opening browser 'Chrome' to base url 'https://www.baidu.com'.</msg>
+<status status="PASS" starttime="20190616 16:57:36.390" endtime="20190616 16:58:02.001"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id = kw</arg>
+<arg>robot framework</arg>
+</arguments>
+<msg timestamp="20190616 16:58:02.005" level="INFO">Typing text 'robot framework' into text field 'id = kw'.</msg>
+<status status="PASS" starttime="20190616 16:58:02.004" endtime="20190616 16:58:02.805"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id = su</arg>
+</arguments>
+<msg timestamp="20190616 16:58:02.806" level="INFO">Clicking button 'id = su'.</msg>
+<status status="PASS" starttime="20190616 16:58:02.806" endtime="20190616 16:58:03.063"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190616 16:58:03.065" endtime="20190616 16:58:04.434"></status>
+</kw>
+<status status="PASS" starttime="20190616 16:57:36.387" endtime="20190616 16:58:04.437" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20190616 16:57:35.962" endtime="20190616 16:58:04.447"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Rf Demo">Rf Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,22 @@
+*** Settings ***
+Library           SeleniumLibrary
+Resource          UI分层.txt
+
+*** Test Cases ***
+分层一测试用例
+    打开浏览器    https://www.baidu.com    gc
+    输入框    selenium
+    点击按钮
+    等待时间
+    验证标题    selenium_百度搜索
+    关闭浏览器
+
+testcase原始代码
+    Open Browser    https://www.baidu.com    chrome
+    Input Text    id = kw    selenium
+    Click Button    id = su
+    Wait Until Page Contains Element    css = #su
+    sleep    2
+    ${title}    get title
+    Should Contain    ${title}    selenium_百度搜索
+    Close Browser
